@@ -48,7 +48,7 @@ export function BKash() {
       {bkashQR && (
         <img
           src={bkashSalami}
-          className="absolute top-2/7 left-1/2 -translate-1/2 h-1/3 w-auto"
+          className="absolute top-2/7 left-1/2 -translate-1/2 h-1/3 w-auto floating-element"
         />
       )}
 
