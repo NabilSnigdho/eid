@@ -1,0 +1,13 @@
+.loopingClouds {
+  animation: scroll 60s linear infinite; /* Applies the animation */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%); /* Start position */
+  }
+  100% {
+    /* Moves the content exactly 50% of the width (one full set of content) */
+    transform: translateX(100%);
+  }
+}

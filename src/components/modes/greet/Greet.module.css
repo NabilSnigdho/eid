@@ -1,0 +1,46 @@
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(4px, -10px) rotate(1deg);
+  }
+  50% {
+    transform: translate(0px, -20px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-4px, -10px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+.floatingElement {
+  animation: float 6s ease-in-out infinite;
+}
+
+.alkalamiRegular {
+  font-family: "Alkalami", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.playfairDisplay {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.bigText {
+  font-size: min(var(--text-8xl), 8vh, 8vw);
+  line-height: var(--tw-leading, var(--text-8xl--line-height) /* 1 */);
+}
+
+.bigSubtext {
+  font-size: min(var(--text-2xl), 4vh, 4vw);
+  line-height: var(
+    --tw-leading,
+    var(--text-2xl--line-height) /* calc(2 / 1.5) ≈ 1.333333 */
+  );
+}

@@ -1,38 +1,28 @@
-import trees from "@/assets/trees.webp";
-import { Clouds } from "./Clouds";
-import { EidGah } from "./EidGah";
-import { BKash } from "./BKash";
-import { Toaster } from "@/components/ui/sonner";
-import { useQueryState } from "nuqs";
-import { Greet } from "./Greet";
-import { NavigationPane } from "./NavigationPane";
+import { useQueryState } from "nuqs"
+
+import { Toaster } from "@/components/ui/sonner"
+
+import { EidGah } from "./components/EidGah"
+import { BKash } from "./components/modes/bkash/BKash"
+import { Greet } from "./components/modes/greet/Greet"
+import { NavigationPane } from "./components/NavigationPane"
+import { Sky } from "./components/Sky"
 
 function App() {
-  const [mode] = useQueryState("mode", { defaultValue: "greet" });
+  const [mode] = useQueryState("mode", { defaultValue: "greet" })
 
   return (
-    <div className="fixed inset-0 bg-red-500 overflow-hidden">
-      <div className="h-4/7 bg-linear-to-t from-sky-50 to-sky-300 relative overflow-hidden">
-        <div className="cloud absolute inset-0 -left-full right-2/1 opacity-30">
-          <Clouds className="" />
-          <Clouds className="left-full" />
-          <Clouds className="left-2/1" />
-        </div>
-      </div>
-      <div className="h-3/7 bg-linear-to-t from-orange-300 to-orange-100"></div>
-      <div
-        style={{ backgroundImage: `url(${trees})` }}
-        className="absolute bottom-3/7 h-24 w-full bg-repeat-x bg-contain horizon bg-center"
-      />
-      <EidGah />
+    <div className="fixed inset-0 overflow-hidden">
+      <Sky className="h-4/7" />
+      <EidGah className="h-3/7" />
 
       {mode === "greet" && <Greet />}
       {mode === "bkash" && <BKash />}
 
       <NavigationPane />
-      <Toaster />
+      <Toaster position="top-center" />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
